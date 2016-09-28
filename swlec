@@ -10,35 +10,35 @@ struct Student_Details{
 int main(){
 	Student_Details sd[100];
 	int n, i, num, flag= 0;
-	cout << "enter n" << endl;
+	cout << "\nenter n" << endl;
 	cin >> n;
 	for (i=0;i<n;i++){
-		cout << "Enter student number, name and Address of student " << i+1 << endl;
+		cout << "Enter student number, name and Address of student " << i+1 << endl << endl;
 		cin >> sd[i].studentNum;
 		cin.ignore();
-		cin.getline(sd[i].studentName,49);
-		cin.getline(sd[i].address,99);
+		cin >> sd[i].studentName;
+		cin >> sd[i].address;
 	}
-	cout << "Enter student number to search ";
+	cout << "\nenter student number to search ";
 	cin>>num;
-    cout << "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  " << endl <<endl;
+    cout << "\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  " << endl <<endl;
 	cout<< setw(10) <<"Student Number";
-	cout<< setw(16) <<"Name";
+	cout<< setw(20) <<"Name";
 	cout<< setw(30) <<"Address" << endl;
     for(i=0;i<n;i++){
-	cout << setw(5) << i+1
-	<< setw(40)<< sd[i].studentName 
-	<< setw(80) << sd[i].address << endl << endl;
+	cout << setw(10) << i+1
+	<< setw(20)<< sd[i].studentName 
+	<< setw(30) << sd[i].address << endl << endl;
 	}
 	cout << "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  " << endl; 
 	for(i=0;i<n;i++){
 		if(sd[i].studentNum==num){
-			cout<<"Search is successful at position " << (i+1);
+			cout<<"\nSearch is successful at position " << (i+1);
 			flag=1;
 	}
 	}
 	if (flag==0)
-			cout << "Search unsuccessful";	
+			cout << "\nSearch unsuccessful";	
 	
 	
 }
