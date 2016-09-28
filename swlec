@@ -9,7 +9,7 @@ struct Student_Details{
 };
 int main(){
 	Student_Details sd[100];
-	int n, i, num;
+	int n, i, num, flag= 0;
 	cout << "enter n" << endl;
 	cin >> n;
 	for (i=0;i<n;i++){
@@ -21,21 +21,25 @@ int main(){
 	}
 	cout << "Enter student number to search ";
 	cin>>num;
-    cout << "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  " << endl;
+    cout << "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  " << endl <<endl;
 	cout<< setw(10) <<"Student Number";
 	cout<< setw(16) <<"Name";
 	cout<< setw(30) <<"Address" << endl;
     for(i=0;i<n;i++){
-	cout << setw(10) << i+1
-	<< setw(16)<< sd[i].studentName 
-	<< setw(30) << sd[i].address << endl;
+	cout << setw(5) << i+1
+	<< setw(40)<< sd[i].studentName 
+	<< setw(80) << sd[i].address << endl << endl;
 	}
 	cout << "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  " << endl; 
 	for(i=0;i<n;i++){
-		if(sd[i].studentNum==num)
+		if(sd[i].studentNum==num){
 			cout<<"Search is successful at position " << (i+1);
-		else
-			cout << "Search unsuccessful";
-	}		
+			flag=1;
+	}
+	}
+	if (flag==0)
+			cout << "Search unsuccessful";	
+	
+	
 }
 
