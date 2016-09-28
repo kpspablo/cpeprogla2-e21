@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+struct Student_Details{
+	int studentNum;
+	char studentName[50];
+	char address[100];
+};
+int main(){
+	Student_Details sd[100];
+	int n, i, num;
+	cout << "enter n" << endl;
+	cin >> n;
+	for (i=0;i<n;i++){
+		cout << "Enter student number, name and Address of student " << i+1 << endl;
+		cin >> sd[i].studentNum;
+		cin.ignore();
+		cin.getline(sd[i].studentName,49);
+		cin.getline(sd[i].address,99);
+	}
+	cout << "Enter student number to search ";
+	cin>>num;
+    cout << "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  " << endl;
+	cout<< setw(10) <<"Student Number";
+	cout<< setw(16) <<"Name";
+	cout<< setw(30) <<"Address" << endl;
+    for(i=0;i<n;i++){
+	cout << setw(10) << i+1
+	<< setw(16)<< sd[i].studentName 
+	<< setw(30) << sd[i].address << endl;
+	}
+	cout << "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  " << endl; 
+	for(i=0;i<n;i++){
+		if(sd[i].studentNum==num)
+			cout<<"Search is successful at position " << (i+1);
+		else
+			cout << "Search unsuccessful";
+	}		
+}
+
