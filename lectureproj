@@ -1,0 +1,884 @@
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+#include <iomanip>
+#include <fstream>
+#include<stdlib.h>
+using namespace std;
+
+//Heavy Meals
+const double RegularFriedChicken = 438.90;
+const double SizzlingSweetSpicyChicken = 257.40;
+const double ChickenSisig = 229.90;
+const double CamaronRebosado = 376.20;
+const double GambasConAligue = 346.50;
+const double SinigangNaHipon = 377.30;
+const double BonelessBangus = 282.70;
+const double SweetAndSourFishFillet = 268.40;
+const double SteamedFishFilletInLightSoy = 279.40;
+const double FishFilletInBlackBeanSauce =279.40;
+
+//Drinks/Beverages
+const double PepsiLiterBottle = 93.50;
+const double LLiptonIcedTea = 97.90;
+const double BottledWater = 55.00;
+const double BottomlessIcetea = 150.00;
+const double Bottomlesscoke = 155.00;
+const double Bottomlesssprite = 160.00;
+const double Bottomelesspepsi = 140.00;
+const double Bottomlessredtea = 145.00;
+const double Pineapplejuice = 87.00;
+const double MangoJuice = 80.00;
+
+//Desserts
+const double MangoCreamDessert = 82.50;
+const double LecheFlan = 71.50;
+const double HaloHaloSpecial = 28.70;
+const double HaloHaloRegular = 100.10;
+const double GiantHaloHalo = 478.50;
+const double UbeCremeDecadence = 74.80;
+const double BukoPandan = 68.20;
+const double MacaroniSalad = 57.20;
+const double PotatoSalad = 57.20;
+const double ChocolateCake = 150.00;
+
+//Group Meals
+const double EightPerson = 1000.00;
+const double SixPerson = 949.99;
+const double FourPerson = 900.00;
+
+const double chicken=100.50;
+const double beef=250.50;
+const double pork=230.50;
+
+//tax
+const double tax=.12;
+
+int resto(int x[20],int y[20]);
+
+struct food{
+       char foodname[20];
+       int foodprice[20];
+       int foodquantity[20];
+       int foodid[20];
+       };
+
+
+int main()
+{
+      int i=1,p,o=1;
+      food menu[20];
+      char ans;
+      double go[20],foodtax=0;
+      int x;
+      do
+      {
+           double g[i];
+      cout<<"**************************************************"<<endl;
+      cout<<"\t\tAnonymous Resto"<<endl;
+      cout<<"**************************************************"<<endl;
+      cout<<"[1] - Personal Info"<<endl;
+      cout<<"[2] - Meals"<<endl;
+      cout<<"[3] - Payment"<<endl;
+      cout<<"[4] - Change"<<endl;
+      cout<<"[5] - Receipt"<<endl;
+      cout<<"Enter Choice: ";
+      cin>>menu[i].foodid[i];
+      switch(menu[i].foodid[i])
+      {
+      	case 1:
+      		getch();
+      		system("cls");
+      		int Month,Year,Day,Number;
+      		char Name[50];
+      		char Address[50];
+      		cin.ignore();
+      		cout<<"Personal Information"<<endl;
+      		cout<<"Name: ";
+      		cin.getline(Name,50);
+      		cout<<"Date "<<endl;
+      		cout<<"Month: ";
+      		cin>>Month;
+      		cout<<"Day: ";
+      		cin>>Day;
+      		cout<<"Year: ";
+      		cin>>Year;
+      		cout<<"Contact Number: ";
+      		cin>>Number;
+      		cin.ignore();
+      		cout<<"Address: ";
+      		cin.getline(Address,50);
+      		
+      		cout<<"Personal Info Finish? ";
+			cin>>ans;
+      		break;
+      		
+      		
+      	case 2:
+      	getch();
+      	system("cls");
+      	cout<<"MENU"<<endl<<endl;
+      	cout<<"[1] - Heavy Meals"<<endl;
+      	cout<<"[2] - Deserts"<<endl;
+      	cout<<"[3] - Drinks/Beverages"<<endl;
+      	cout<<"[4] - Payment"<<endl;
+		cout<<"Enter Choice: ";
+      cin>>menu[i].foodid[i];
+      switch(menu[i].foodid[i])
+      {
+		  
+      	case 1:
+      		getch();
+      		system("cls");
+       		cout<<"Heavy Meals"<<endl;
+      		cout<<"[1] - Regular Fried Chicken"<<endl;
+      		cout<<"[2] - Sizzling Sweet Spicy Chicken"<<endl;
+      		cout<<"[3] - Chicken Sisig"<<endl;
+      		cout<<"[4] - Camaron Rebosado"<<endl;
+      		cout<<"[5] - Gambas Con Aligue"<<endl;
+      		cout<<"[6] - Sinigang Na Hipon"<<endl;
+      		cout<<"[7] - Boneless Bangus"<<endl;
+      		cout<<"[8] - Sweet And Sour Fish Fillet"<<endl;
+			cout<<"[9] - Steamed Fish Fillet In Light Soy"<<endl;
+			cout<<"[10] - Fish Fillet In Black Bean Sauce"<<endl;
+			cout<<"Enter your order: ";
+			cin>>menu[i].foodid[i];
+      		switch(menu[i].foodid[i])
+      {
+			
+				case 1:
+								  cout<<"\nRegular Fried Chicken"<<endl;
+                                  cout<<"Price: "<<RegularFriedChicken<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Regular Fried Chicken");
+                                  g[i]=menu[i].foodquantity[i]*RegularFriedChicken;
+                                  go[i]=menu[i].foodquantity[i]*RegularFriedChicken;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+      							  system("cls");
+				                  break;
+				                  
+				                  
+				case 2:
+								  cout<<"\nSizzling Sweet Spicy Chicken"<<endl;
+                                  cout<<"Price: "<<SizzlingSweetSpicyChicken<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Sizzling Sweet Spicy Chicken");
+                                  g[i]=menu[i].foodquantity[i]*SizzlingSweetSpicyChicken;
+                                  go[i]=menu[i].foodquantity[i]*SizzlingSweetSpicyChicken;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+      							  system("cls");
+				                  break;
+				                  
+				case 3:
+								  cout<<"\nChicken Sisig"<<endl;
+                                  cout<<"Price: "<<ChickenSisig<<endl;
+                                   cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Chicken Sisig");
+                                  g[i]=menu[i].foodquantity[i]*ChickenSisig;
+                                  go[i]=menu[i].foodquantity[i]*ChickenSisig;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+      							  system("cls");
+				                  break;		
+								  
+				case 4:
+								  cout<<"\nCamaron Rebosado"<<endl;
+                                  cout<<"Price: "<<CamaronRebosado<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Camaron Rebosado");
+                                  g[i]=menu[i].foodquantity[i]*CamaronRebosado;
+                                  go[i]=menu[i].foodquantity[i]*CamaronRebosado;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+      							  system("cls");
+				                  break;		
+								  
+				case 5:
+								  cout<<"\nGambas Con Aligue"<<endl;
+                                  cout<<"Price: "<<GambasConAligue<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Gambas Con Aligue");
+                                  g[i]=menu[i].foodquantity[i]*GambasConAligue;
+                                  go[i]=menu[i].foodquantity[i]*GambasConAligue;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+      							  system("cls");
+				                  break;		
+								  
+				case 6:
+								  cout<<"\nSinigang Na Hipon"<<endl;
+                                  cout<<"Price: "<<SinigangNaHipon<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Sinigang Na Hipon");
+                                  g[i]=menu[i].foodquantity[i]*SinigangNaHipon;
+                                  go[i]=menu[i].foodquantity[i]*SinigangNaHipon;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+      							  system("cls");
+				                  break;		
+								  
+				case 7:
+								  cout<<"\nBoneless Bangus"<<endl;
+                                  cout<<"Price: "<<BonelessBangus<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Boneless Bangus");
+                                  g[i]=menu[i].foodquantity[i]*BonelessBangus;
+                                  go[i]=menu[i].foodquantity[i]*BonelessBangus;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  break;		
+								  
+				case 8:
+								  cout<<"\nSweet And Sour Fish Fillet"<<endl;
+                                  cout<<"Price: "<<SweetAndSourFishFillet<<endl;
+                                  cout<<"how many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Sweet And Sour Fish Fillet");
+                                  g[i]=menu[i].foodquantity[i]*SweetAndSourFishFillet;
+                                  go[i]=menu[i].foodquantity[i]*SweetAndSourFishFillet;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  break;		
+								  
+				case 9:
+								  cout<<"\nSteamed Fish Fillet In Light Soy"<<endl;
+                                  cout<<"Price: "<<SteamedFishFilletInLightSoy<<endl;
+                                   cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Steamed Fish Fillet In Light Soy");
+                                  g[i]=menu[i].foodquantity[i]*SteamedFishFilletInLightSoy;
+                                  go[i]=menu[i].foodquantity[i]*SteamedFishFilletInLightSoy;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  break;
+								  	
+				case 10:
+								  cout<<"\nFish Fillet In Black Bean Sauce"<<endl;
+                                  cout<<"Price: "<<FishFilletInBlackBeanSauce<<endl;
+                                   cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Fish Fillet In Black Bean Sauce");
+                                  g[i]=menu[i].foodquantity[i]*FishFilletInBlackBeanSauce;
+                                  go[i]=menu[i].foodquantity[i]*FishFilletInBlackBeanSauce;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  break;				
+				              }
+				              break;
+				              
+		case 2:
+      		getch();
+      		system("cls");
+       		cout<<"Group Meals"<<endl;
+      		cout<<"[1] - For 8 Persons"<<endl;
+      		cout<<"[2] - For 6 Persons"<<endl;
+      		cout<<"[3] - For 4 Persons"<<endl;
+			cout<<"Enter your order: ";
+			cin>>menu[i].foodid[i];
+      		switch(menu[i].foodid[i])  
+			  {
+			  
+      			case 1:
+								  cout<<"\nGroup Meals For 8 Persons"<<endl;
+								  cout<<"Regular Fried Chicken(Whole)"<<endl;
+								  cout<<"5 piece - Spaghetti"<<endl;
+								  cout<<"Sinigang"<<endl;
+								  cout<<"Bottomless Ice Tea"<<endl;
+                                  cout<<"Price: "<<EightPerson<<endl;
+                                   cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Group Meals 1");
+                                  g[i]=menu[i].foodquantity[i]*EightPerson;
+                                  go[i]=menu[i].foodquantity[i]*EightPerson;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;		
+				                  
+				case 2:
+								  cout<<"\nGroup Meals For 6 Persons"<<endl;
+								  cout<<"Chicken Sisig"<<endl;
+								  cout<<"Steamed Fish Fillet In Light"<<endl;
+								  cout<<"Fish Fillet In Black Bean Sauce"<<endl;
+								  cout<<"6 pieces Mango Juice"<<endl;
+                                  cout<<"Price: "<<SixPerson<<endl;
+                                   cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Group Meal 2");
+                                  g[i]=menu[i].foodquantity[i]*SixPerson;
+                                  go[i]=menu[i].foodquantity[i]*SixPerson;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                   getch();
+				                  system("cls");
+				                  break;		
+				                  
+				case 3:
+								  cout<<"\nGroup Meals For 4 Persons"<<endl;
+								  cout<<"Regular Fried Chicken(Whole)"<<endl;
+								  cout<<"Sizzling Sweet Spicy Chicken"<<endl;
+								  cout<<"2 piece Pineapple Juice"<<endl;
+								  cout<<"2 piece Mango Juice"<<endl;
+                                  cout<<"Price: "<<FourPerson<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Group Meal 3");
+                                  g[i]=menu[i].foodquantity[i]*FourPerson;
+                                  go[i]=menu[i].foodquantity[i]*FourPerson;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;		
+	  }
+	  break;
+	  case 3:
+      		getch();
+      		system("cls");
+       		cout<<"Desserts"<<endl;
+       		cout<<"[1] - Mango Cream Dessert"<<endl;
+      		cout<<"[2] - Leche Flan"<<endl;
+      		cout<<"[3] - Halo-Halo Special"<<endl;
+      		cout<<"[4] - Halo-Halo Regular"<<endl;
+      		cout<<"[5] - Giant Halo-Halo"<<endl;
+      		cout<<"[6] - Ube Creme Decadence"<<endl;
+      		cout<<"[7] - Buko Pandan"<<endl;
+      		cout<<"[8] - Macaroni Salad"<<endl;
+			cout<<"[9] - Potato Salad"<<endl;
+			cout<<"[10] - Chocolate Cake"<<endl;
+			cout<<"Enter your order: ";
+			cin>>menu[i].foodid[i];
+      		switch(menu[i].foodid[i])  
+			  {
+			  
+      			case 1:
+								  cout<<"\nMango Cream Dessert"<<endl;
+                                  cout<<"Price: "<<MangoCreamDessert<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Mango Cream Dessert");
+                                  g[i]=menu[i].foodquantity[i]*MangoCreamDessert;
+                                  go[i]=menu[i].foodquantity[i]*MangoCreamDessert;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 2:
+								  cout<<"\nLeche Flan"<<endl;
+                                  cout<<"Price: "<<LecheFlan<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Leche Flan");
+                                  g[i]=menu[i].foodquantity[i]*LecheFlan;
+                                  go[i]=menu[i].foodquantity[i]*LecheFlan;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 3:
+								  cout<<"\nHalo-Halo Special"<<endl;
+                                  cout<<"Price: "<<HaloHaloSpecial<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Halo-Halo Special");
+                                  g[i]=menu[i].foodquantity[i]*HaloHaloSpecial;
+                                  go[i]=menu[i].foodquantity[i]*HaloHaloSpecial;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 4:
+								  cout<<"\nHalo-Halo Regular"<<endl;
+                                  cout<<"Price: "<<HaloHaloRegular<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Halo-Halo Regular");
+                                  g[i]=menu[i].foodquantity[i]*HaloHaloRegular;
+                                  go[i]=menu[i].foodquantity[i]*HaloHaloRegular;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 5:
+								  cout<<"\nGiant Halo-Halo"<<endl;
+                                  cout<<"Price: "<<GiantHaloHalo<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Giant Halo-Halo");
+                                  g[i]=menu[i].foodquantity[i]*GiantHaloHalo;
+                                  go[i]=menu[i].foodquantity[i]*GiantHaloHalo;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 6:
+								  cout<<"\nUbe Creme Decadence"<<endl;
+                                  cout<<"Price: "<<UbeCremeDecadence<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Ube Creme Decadence");
+                                  g[i]=menu[i].foodquantity[i]*UbeCremeDecadence;
+                                  go[i]=menu[i].foodquantity[i]*UbeCremeDecadence;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 7:
+								  cout<<"\nBuko Pandan"<<endl;
+                                  cout<<"Price: "<<BukoPandan<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Buko Pandan");
+                                  g[i]=menu[i].foodquantity[i]*BukoPandan;
+                                  go[i]=menu[i].foodquantity[i]*BukoPandan;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 8:
+								  cout<<"\nMacaroni Salad"<<endl;
+                                  cout<<"Price: "<<MacaroniSalad<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Macaroni Salad");
+                                  g[i]=menu[i].foodquantity[i]*MacaroniSalad;
+                                  go[i]=menu[i].foodquantity[i]*MacaroniSalad;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 9:
+								  cout<<"\nPotato Salad"<<endl;
+                                  cout<<"Price: "<<PotatoSalad<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Potato Salad");
+                                  g[i]=menu[i].foodquantity[i]*PotatoSalad;
+                                  go[i]=menu[i].foodquantity[i]*PotatoSalad;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 10:
+								  cout<<"\nChocolate Cake"<<endl;
+                                  cout<<"Price: "<<ChocolateCake<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Chocolate Cake");
+                                  g[i]=menu[i].foodquantity[i]*ChocolateCake;
+                                  go[i]=menu[i].foodquantity[i]*ChocolateCake;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+	  }
+	  break;
+	  
+	  case 4:
+	  		getch();
+	  		system("cls");
+			cout<<"Drinks/Beverages"<<endl;
+       		cout<<"[1] - Pepsi 1.5 Liter Bottle"<<endl;
+      		cout<<"[2] - S1.5 L Lipton Iced Tea"<<endl;
+      		cout<<"[3] - Bottled Water"<<endl;
+      		cout<<"[4] - Bottomless Ice Tea"<<endl;
+      		cout<<"[5] - Bottomless Coke"<<endl;
+      		cout<<"[6] - Bottomless Sprite"<<endl;
+      		cout<<"[7] - Bottomeless Pepsi"<<endl;
+      		cout<<"[8] - Bottomless red tea "<<endl;
+			cout<<"[9] - Pineapple Juice"<<endl;
+			cout<<"[10] - Mango Juice"<<endl;
+			cout<<"Enter your order: ";
+			cin>>menu[i].foodid[i];
+      		switch(menu[i].foodid[i])  {
+			  
+      			case 1:
+								  cout<<"\nPepsi 1.5 Liter Bottle"<<endl;
+                                  cout<<"Price: "<<PepsiLiterBottle<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Pepsi 1.5 Liter Bottle");
+                                  g[i]=menu[i].foodquantity[i]*PepsiLiterBottle;
+                                  go[i]=menu[i].foodquantity[i]*PepsiLiterBottle;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 2:
+								  cout<<"\n1.5 L Lipton Iced Tea"<<endl;
+                                  cout<<"Price: "<<LLiptonIcedTea<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"1.5 L Lipton Iced Tea");
+                                  g[i]=menu[i].foodquantity[i]*LLiptonIcedTea;
+                                  go[i]=menu[i].foodquantity[i]*LLiptonIcedTea;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 3:
+								  cout<<"\nBottled Water"<<endl;
+                                  cout<<"Price: "<<BottledWater<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Bottled Water");
+                                  g[i]=menu[i].foodquantity[i]*BottledWater;
+                                  go[i]=menu[i].foodquantity[i]*BottledWater;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 4:
+								  cout<<"\nBottomless Ice Tea"<<endl;
+                                  cout<<"Price: "<<BottomlessIcetea<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Bottomless Ice Tea");
+                                  g[i]=menu[i].foodquantity[i]*BottomlessIcetea;
+                                  go[i]=menu[i].foodquantity[i]*BottomlessIcetea;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 5:
+								  cout<<"\nBottomless Coke"<<endl;
+                                  cout<<"Price: "<<Bottomlesscoke<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Bottomless Coke");
+                                  g[i]=menu[i].foodquantity[i]*Bottomlesscoke;
+                                  go[i]=menu[i].foodquantity[i]*Bottomlesscoke;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+			    case 6:
+								  cout<<"\nBottomless Sprite"<<endl;
+                                  cout<<"Price: "<<Bottomlesssprite<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Bottomless Sprite");
+                                  g[i]=menu[i].foodquantity[i]*Bottomlesssprite;
+                                  go[i]=menu[i].foodquantity[i]*Bottomlesssprite;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+			    case 7:
+								  cout<<"\nBottomeless Pepsi"<<endl;
+                                  cout<<"Price: "<<Bottomelesspepsi<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Bottomeless Pepsi");
+                                  g[i]=menu[i].foodquantity[i]*Bottomelesspepsi;
+                                  go[i]=menu[i].foodquantity[i]*Bottomelesspepsi;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 8:
+								  cout<<"\nBottomless Red Tea "<<endl;
+                                  cout<<"Price: "<<Bottomlessredtea<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Bottomless Red Tea ");
+                                  g[i]=menu[i].foodquantity[i]*Bottomlessredtea ;
+                                  go[i]=menu[i].foodquantity[i]*Bottomlessredtea ;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 9:
+								  cout<<"\nPineapple Juice"<<endl;
+                                  cout<<"Price: "<<Pineapplejuice<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Pineapple Juice");
+                                  g[i]=menu[i].foodquantity[i]*Pineapplejuice;
+                                  go[i]=menu[i].foodquantity[i]*Pineapplejuice;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				case 10:
+								  cout<<"\nMango Juice"<<endl;
+                                  cout<<"Price: "<<MangoJuice<<endl;
+                                  cout<<"How many? ";
+                                  resto(&menu[i].foodid[i],&menu[i].foodquantity[i]);
+                                  strcpy(menu[i].foodname,"Mango Juice");
+                                  g[i]=menu[i].foodquantity[i]*MangoJuice;
+                                  go[i]=menu[i].foodquantity[i]*MangoJuice;
+                                  cout<<"Do you want to order again? ";
+				                  cin>>ans;
+				                  getch();
+				                  system("cls");
+				                  break;
+				                  
+				                  
+	  }
+	  break;
+}
+break;
+	  
+	  case 3:
+	  	{
+	  		getch();
+	  		system("cls");
+	  		double pay;
+	  		double assement;
+	  		for (int i=1;i<=p;i++)
+                {
+                foodtax+=go[i];
+                cout<<menu[i].foodname<<endl;
+                cout<<"Quantity: "<<menu[i].foodquantity[i]<<endl;
+				cout<<"Price: "<<go[i]<<endl;
+				pay=foodtax*.12;
+                cout<<"Tax: "<<pay<<endl;
+                
+                                  }
+                                    
+                                      getch();
+                                     system("cls");
+									  break;
+                                  }
+	   case 4:
+	   	for (int i=1;i<=p;i++){
+		   
+	   	getch();
+		double pay;
+	   	system("cls");
+	   	cout<<"Total Assement: "<<foodtax*.12+go[i]<<endl;
+	   	double change;
+	   	cout<<"I receive ";
+	   	cin>>change;
+	   	pay=foodtax*.12+go[i]-change;
+	   	cout<<"Your Change: "<<pay<<endl<<endl;
+	   	cout<<"Thank you, please come again"<<endl;
+	   	cout<<"Anonymous Resto";
+		   }
+		   
+	   	
+}	
+                                  i++;
+                                  p=sizeof g/sizeof(double);
+                                  }
+                                  while(ans=='y'||ans=='n');
+                                  
+                         
+      getch();
+      return 0;
+      }
+  
+      
+       int resto(int x[20],int y[20])
+      {
+          switch(*x)
+          {
+                   case 1:
+                   cin>>*y;
+                        if (*y<=10 && *y>=1)
+                   {
+                        return 0;
+                        }
+                        else if (*y>10)
+                        {
+                             cout<<"you exceed your order limit\n";
+                             cout<<"our limit is 10 orders please change your order\n";
+                             cout<<"Enter a new order:";
+                             cin>>*y;
+                             return 0;
+                             }
+                        
+                   break;
+                   case 2:
+                   cin>>*y;
+                        if (*y<=11 && *y>=1)
+                   {
+                        return *y;
+                        }
+                        else if (*y>10)
+                        {
+                             cout<<"you exceed your order limit\n";
+                             cout<<"our limit is 10 orders please change your order\n";
+                             cout<<"Enter a new order:";
+                             cin>>*y;
+                             return *y;
+                             }
+                   break;
+                   case 3:
+                   cin>>*y;
+                        if (*y<=12 && *y>=1)
+                   {
+                        return *y;
+                        }
+                        else if (*y>10)
+                        {
+                             cout<<"you exceed your order limit\n";
+                             cout<<"our limit is 10 orders please change your order\n";
+                             cout<<"Enter a new order:";
+                             cin>>*y;
+                             return *y;
+                             }
+                   break;
+                   case 4:
+                   cin>>*y;
+                        if (*y<=13 && *y>=1)
+                   {
+                        return *y;
+                        }
+                        else if (*y>10)
+                        {
+                             cout<<"you exceed your order limit\n";
+                             cout<<"our limit is 10 orders please change your order\n";
+                             cout<<"Enter a new order:";
+                             cin>>*y;
+                             return *y;
+                             }
+                   break;
+                   case 5:
+                   cin>>*y;
+                        if (*y<=14 && *y>=1)
+                   {
+                        return *y;
+                        }
+                        else if (*y>10)
+                        {
+                             cout<<"you exceed your order limit\n";
+                             cout<<"our limit is 10 orders please change your order\n";
+                             cout<<"Enter a new order:";
+                             cin>>*y;
+                             return *y;
+                             }
+                   break;
+                   case 6:
+                   cin>>*y;
+                        if (*y<=15 && *y>=1)
+                   {
+                        return *y;
+                        }
+                        else if (*y>10)
+                        {
+                             cout<<"you exceed your order limit\n";
+                             cout<<"our limit is 10 orders please change your order\n";
+                             cout<<"Enter a new order:";
+                             cin>>*y;
+                             return *y;
+                             }
+                   break;
+                   case 7:
+                   cin>>*y;
+                        if (*y<=16 && *y>=1)
+                   {
+                        return *y;
+                        }
+                        else if (*y>10)
+                        {
+                             cout<<"you exceed your order limit\n";
+                             cout<<"our limit is 10 orders please change your order\n";
+                             cout<<"Enter a new order:";
+                             cin>>*y;
+                             return *y;
+                             }
+                   break;
+                   case 8:
+                   cin>>*y;
+                        if (*y<=17 && *y>=1)
+                   {
+                        return *y;
+                        }
+                        else if (*y>10)
+                        {
+                             cout<<"you exceed your order limit\n";
+                             cout<<"our limit is 10 orders please change your order\n";
+                             cout<<"Enter a new order:";
+                             cin>>*y;
+                             return *y;
+                             }
+                   break;
+                   case 9:
+                   cin>>*y;
+                        if (*y<=18 && *y>=1)
+                   {
+                        return *y;
+                        }
+                        else if (*y>10)
+                        {
+                             cout<<"you exceed your order limit\n";
+                             cout<<"our limit is 10 orders please change your order\n";
+                             cout<<"Enter a new order:";
+                             cin>>*y;
+                             return *y;
+                             }
+                   break;
+                   case 10:
+                   cin>>*y;
+                        if (*y<=19 && *y>=1)
+                   {
+                        return *y;
+                        }
+                        else if (*y>10)
+                        {
+                             cout<<"you exceed your order limit\n";
+                             cout<<"our limit is 10 orders please change your order\n";
+                             cout<<"Enter a new order:";
+                             cin>>*y;
+                             return *y;
+                             }
+                   break;
+                   }
+                   }
+  
