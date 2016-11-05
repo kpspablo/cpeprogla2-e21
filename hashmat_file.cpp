@@ -8,6 +8,5 @@ int main(){
     ifstream f("input.txt");
       while (f >> hash >> opp)
         cout << abs(hash-opp)<<endl;
-    system("pause");
     return 0;
 }   
