@@ -1,5 +1,5 @@
 //pablo
-//lab5 prob3 to be revised/edited
+
 #include<iostream>
 #include<conio.h>
 #include<string.h>
