@@ -3,7 +3,7 @@
 #include<fstream>
 using namespace std;
 main(){
-  ifstream input ("input.txt");
+  ifstream input("input.txt");
   int num1,num2, n, count;
   while( input >> num1 >> num2){
     if((num1 > 0 && num1 < 1000000) && (num2 > 0 && num2 < 1000000)){
